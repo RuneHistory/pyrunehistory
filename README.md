@@ -102,7 +102,7 @@ accounts = rh.accounts.highscores('nickname').get_highscore('5a9d8e6b95f5e704af4
 
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
-| `id` | `str` | *N/A* | The ID of the highscore to fetch |
+| `id` | `str` | *N/A* | The ID of the highscore to fetch. |
 
 ### Create highscore
 The following example will create all skills with the same values to save on space in the example.
