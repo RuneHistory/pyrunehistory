@@ -2,8 +2,8 @@
 
 RuneHistory API client
 
-## Usage
-### Client
+# Usage
+## Client
 ```
 from pyrunehistory.client import Client
 rh = Client()
@@ -14,8 +14,8 @@ rh = Client()
 | `host` | `str` | `http://api.runehistory.com` | API host that the client will use. You will not need this unless you are working locally. |
 | `version` | `int` | `1` | The API version that the client will use. You will not need this unless you are working locally. |
 
-### Accounts
-#### Get accounts
+## Accounts
+### Get accounts
 ```
 from pyrunehistory.client import Client
 rh = Client()
@@ -29,7 +29,7 @@ accounts = rh.accounts.get_accounts()
 | `last_ran_before` | `datetime` | `None` | Only show accounts that were last checked before this time. |
 | `prioritise` | `bool` | `True` | Prioritise the order of return accounts to return accounts to be reported on first. |
 
-#### Get account
+### Get account
 ```
 from pyrunehistory.client import Client
 rh = Client()
@@ -40,7 +40,7 @@ accounts = rh.accounts.get_account('nickname')
 | --- | --- | --- | --- |
 | `slug` | `str` | *N/A* | The slug of the account to fetch. |
 
-#### Create account
+### Create account
 ```
 from pyrunehistory.client import Client
 rh = Client()
@@ -51,7 +51,7 @@ accounts = rh.accounts.create_account('Nickname')
 | --- | --- | --- | --- |
 | `nickname` | `str` | *N/A* | The nickname of the account to create. |
 
-#### Update account
+### Update account
 ```
 from pyrunehistory.client import Client
 rh = Client()
@@ -63,9 +63,9 @@ accounts = rh.accounts.update_account('old-nickname', 'New Nickname')
 | `slug` | `str` | *N/A* | The slug of the account to update. |
 | `nickname` | `str` | *N/A* | The new nickname of the account. |
 
-## Running tests
-### Install the package with test dependencies
+# Running tests
+## Install the package with test dependencies
 `pip install -e ".[test]"`
 
-### Run tox
+## Run tox
 `tox`
