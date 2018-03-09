@@ -1,5 +1,9 @@
 # pyrunehistory
 
+[![Build Status](https://travis-ci.org/jmwri/pyrunehistory.svg?branch=master)](https://travis-ci.org/jmwri/pyrunehistory)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/72d004733ec3f9f03748/test_coverage)](https://codeclimate.com/github/jmwri/pyrunehistory/test_coverage)
+[![Maintainability](https://api.codeclimate.com/v1/badges/72d004733ec3f9f03748/maintainability)](https://codeclimate.com/github/jmwri/pyrunehistory/maintainability)
+
 RuneHistory API client
 
 # Usage
