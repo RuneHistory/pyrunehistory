@@ -28,13 +28,15 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.6',
     ],
-    requires=[
+    install_requires=[
         'typing',
         'requests>=2.18,<3',
     ],
     extras_require={
-        'test': ['coverage', 'pytest', 'pytest-watch', 'tox',
-                 'python-dateutil>=2.6.1,<3']
+        'test': [
+            'coverage', 'pytest', 'pytest-watch', 'tox',
+            'python-dateutil>=2.6.1,<3'
+        ]
     },
     test_suite='tests',
 )
