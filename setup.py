@@ -28,15 +28,17 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3.6',
     ],
+    setup_requires=['pytest-runner'],
     install_requires=[
         'typing',
         'requests>=2.18,<3',
     ],
+    tests_require=[
+        'python-dateutil>=2.6.1,<3', 'pytest',
+    ],
     extras_require={
         'test': [
-            'coverage', 'pytest', 'pytest-watch', 'tox',
-            'python-dateutil>=2.6.1,<3'
+            'coverage', 'tox'
         ]
-    },
-    test_suite='tests',
+    }
 )
