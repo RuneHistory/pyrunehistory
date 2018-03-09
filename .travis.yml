@@ -1,10 +1,24 @@
+env:
+  global:
+  - GIT_COMMITTED_AT=$(if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then git log -1 --pretty=format:%ct;
+    else git log -1 --skip 1 --pretty=format:%ct; fi)
+  matrix:
+    secure: MvLSVMoP35oDvoSgTpRz4f/zqS49OQna6z9zpj/jg1Nbx2G7ZTxdpdLYRym4mA8y0ZcRovobQCkawp9oQRRNc4yILR9rC2A5NvF2zsTv94834RcOySMGkQWqbdwjtBOC+aj9hsQ99vYb7lVLYAHT3S9IKTfWNsWV2/8iPgwO4mH5eCadxIuEcN/UB1b8b8uZkGMaBQW3IveMBlhcdqtzcP6y69wNAjVdz7vhBJdtHABFS7LE3P4QNoMWW2dWccUrknavQjb4xsUHhGQVF6rN/Xk18lBbSwBhp9X9d8rYgQRr1wXXbIJLuLq/hvrODEWoqYG6wgqPDckViI8cgUJGv5p6OpNV9ndOfYmEJqYswR3CNbLeuKTXkh9a736iefSfslWmEzUDunJ1eSN3hCMmvndZ1u1RoaHozRjTx/b27tnSr1Sn9Nnrekg3yliXNMeMrrirEjDobiCSf/W6IW3eUH1DzA+H4iWmlrOPj/Ti3wOX2Thgf1Nl5z6XvDU1sc7icaQraoL9ZH3ReHYR6GicxXQEecBXjhAfZvs0JcpaHJEqpJ0W3YuDFuwri7WHDxJrBA9mroPcvULUeAfLO/3EnJJjCVi+PJFJ+lzqzFGPulcdrK00KNrnfCkJG9tpRZiuZN+g/+WNOV7Z2wIJHe+X/tp/Sy7PxU5AmLZp241DlDg=
 language: python
 python:
 - '3.6'
 install:
 - pip install -e ".[test]"
+before_script:
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
 - tox
+after_script:
+- if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then ./cc-test-reporter after-build --exit-code
+  $TRAVIS_TEST_RESULT; fi
 deploy:
   provider: pypi
   user: jmwri
