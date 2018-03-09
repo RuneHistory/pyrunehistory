@@ -36,4 +36,5 @@ setup(
         'test': ['coverage', 'pytest', 'pytest-watch', 'tox',
                  'python-dateutil>=2.6.1,<3']
     },
+    test_suite='tests',
 )
