@@ -9,7 +9,6 @@ from pyrunehistory.client import Client
 rh = Client()
 ```
 
-#### Arguments
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
 | `host` | `str` | `http://api.runehistory.com` | API host that the client will use. You will not need this unless you are working locally. |
@@ -22,7 +21,7 @@ from pyrunehistory.client import Client
 rh = Client()
 accounts = rh.accounts.get_accounts()
 ```
-##### Arguments
+
 | Name | Type | Default | Description |
 | --- | --- | --- | --- |
 | `runs_unchanged_min` | `int` | `None` | The minimum amount of times an account has been updated without experience changing. |
