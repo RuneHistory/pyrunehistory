@@ -33,6 +33,7 @@ setup(
         'requests>=2.18,<3',
     ],
     extras_require={
-        'test': ['coverage', 'pytest', 'pytest-watch', 'tox']
+        'test': ['coverage', 'pytest', 'pytest-watch', 'tox',
+                 'python-dateutil>=2.6.1,<3']
     },
 )

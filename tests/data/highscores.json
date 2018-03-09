@@ -1,0 +1,236 @@
+[
+  {
+    "account_id": "5a86be56b0d12d0309c185b9",
+    "created_at": "2018-03-05T18:37:31.467000",
+    "id": "5a9d8e6b95f5e704af4e3d39",
+    "skills": {
+      "agility": {
+        "experience": 93662,
+        "level": 49,
+        "rank": 572001
+      },
+      "attack": {
+        "experience": 163019,
+        "level": 54,
+        "rank": 867642
+      },
+      "cooking": {
+        "experience": 120750,
+        "level": 51,
+        "rank": 722387
+      },
+      "crafting": {
+        "experience": 42953,
+        "level": 41,
+        "rank": 802186
+      },
+      "defence": {
+        "experience": 57894,
+        "level": 44,
+        "rank": 909022
+      },
+      "farming": {
+        "experience": 4560,
+        "level": 20,
+        "rank": 517371
+      },
+      "firemaking": {
+        "experience": 40350,
+        "level": 40,
+        "rank": 780845
+      },
+      "fishing": {
+        "experience": 42929,
+        "level": 41,
+        "rank": 1021300
+      },
+      "fletching": {
+        "experience": 1811233,
+        "level": 79,
+        "rank": 194071
+      },
+      "herblore": {
+        "experience": 4673,
+        "level": 20,
+        "rank": 709059
+      },
+      "hitpoints": {
+        "experience": 291712,
+        "level": 60,
+        "rank": 866258
+      },
+      "hunter": {
+        "experience": 1000,
+        "level": 9,
+        "rank": 765253
+      },
+      "magic": {
+        "experience": 534675,
+        "level": 66,
+        "rank": 587377
+      },
+      "mining": {
+        "experience": 35939,
+        "level": 39,
+        "rank": 895474
+      },
+      "overall": {
+        "experience": 4339862,
+        "level": 967,
+        "rank": 631886
+      },
+      "prayer": {
+        "experience": 60246,
+        "level": 44,
+        "rank": 671431
+      },
+      "ranged": {
+        "experience": 515567,
+        "level": 66,
+        "rank": 673321
+      },
+      "slayer": {
+        "experience": 215825,
+        "level": 57,
+        "rank": 458476
+      },
+      "smithing": {
+        "experience": 43998,
+        "level": 41,
+        "rank": 688184
+      },
+      "strength": {
+        "experience": 158814,
+        "level": 54,
+        "rank": 1007011
+      },
+      "theiving": {
+        "experience": 22928,
+        "level": 35,
+        "rank": 664770
+      },
+      "woodcutting": {
+        "experience": 76135,
+        "level": 47,
+        "rank": 969214
+      }
+    }
+  },
+  {
+    "account_id": "5a86be56b0d12d0309c185b9",
+    "created_at": "2018-03-05T18:37:31.181000",
+    "id": "5a9d8e6b95f5e704af4e3d38",
+    "skills": {
+      "agility": {
+        "experience": 93662,
+        "level": 49,
+        "rank": 572001
+      },
+      "attack": {
+        "experience": 163019,
+        "level": 54,
+        "rank": 867642
+      },
+      "cooking": {
+        "experience": 120750,
+        "level": 51,
+        "rank": 722387
+      },
+      "crafting": {
+        "experience": 42953,
+        "level": 41,
+        "rank": 802186
+      },
+      "defence": {
+        "experience": 57894,
+        "level": 44,
+        "rank": 909022
+      },
+      "farming": {
+        "experience": 4560,
+        "level": 20,
+        "rank": 517371
+      },
+      "firemaking": {
+        "experience": 40350,
+        "level": 40,
+        "rank": 780845
+      },
+      "fishing": {
+        "experience": 42929,
+        "level": 41,
+        "rank": 1021300
+      },
+      "fletching": {
+        "experience": 1811233,
+        "level": 79,
+        "rank": 194071
+      },
+      "herblore": {
+        "experience": 4673,
+        "level": 20,
+        "rank": 709059
+      },
+      "hitpoints": {
+        "experience": 291712,
+        "level": 60,
+        "rank": 866258
+      },
+      "hunter": {
+        "experience": 1000,
+        "level": 9,
+        "rank": 765253
+      },
+      "magic": {
+        "experience": 534675,
+        "level": 66,
+        "rank": 587377
+      },
+      "mining": {
+        "experience": 35939,
+        "level": 39,
+        "rank": 895474
+      },
+      "overall": {
+        "experience": 4339862,
+        "level": 967,
+        "rank": 631886
+      },
+      "prayer": {
+        "experience": 60246,
+        "level": 44,
+        "rank": 671431
+      },
+      "ranged": {
+        "experience": 515567,
+        "level": 66,
+        "rank": 673321
+      },
+      "slayer": {
+        "experience": 215825,
+        "level": 57,
+        "rank": 458476
+      },
+      "smithing": {
+        "experience": 43998,
+        "level": 41,
+        "rank": 688184
+      },
+      "strength": {
+        "experience": 158814,
+        "level": 54,
+        "rank": 1007011
+      },
+      "theiving": {
+        "experience": 22928,
+        "level": 35,
+        "rank": 664770
+      },
+      "woodcutting": {
+        "experience": 76135,
+        "level": 47,
+        "rank": 969214
+      }
+    }
+  }
+]

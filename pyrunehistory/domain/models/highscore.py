@@ -26,16 +26,33 @@ class HighScore:
         self.skills = skills
 
     @property
-    def skills(self):
-        return {skill: self._skills[skill]
-                if skill in self._skills else None
-                for skill in SKILLS}
+    def skills(self) -> typing.Dict[str, typing.Union[None, Skill]]:
+        return {
+            skill: self._skills[skill]
+            if skill in self._skills else None
+            for skill in SKILLS
+        }
 
     @skills.setter
     def skills(self, skills: typing.Dict[str, Skill]):
-        for name, skill in skills.items():
-            if name not in SKILLS:
-                raise AttributeError('{key} is not a valid skill'.format(
-                    key=name
-                ))
-            self._skills[name] = skill
+        validate_skills(skills)
+        self._skills = skills
+
+
+def validate_skills(skills: typing.Dict[str, Skill]):
+    for name, skill in skills.items():
+        if name not in SKILLS:
+            raise AttributeError('{key} is not a valid skill'.format(
+                key=name
+            ))
+        if not isinstance(skill, Skill):
+            raise AttributeError('Skills need to be an instance of {}'.format(
+                Skill.__name__
+            ))
+
+
+def to_skills(skills: typing.Dict[str, dict]):
+    return {
+        name: Skill(**skill)
+        for name, skill in skills.items()
+    }

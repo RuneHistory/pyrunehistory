@@ -55,3 +55,19 @@ def test_highscore_creation_invalid_skill():
             skills=skills
         )
 
+
+def test_highscore_creation_invalid_skill_type():
+    now = datetime.utcnow()
+    skills = {
+        'agility': {
+            'rank': 1, 'level': 2, 'experience': 3
+        }
+    }
+    with pytest.raises(AttributeError):
+        HighScore(
+            account_id='5a86be56b0d12d0309c185b9',
+            id='5a9d8e6b95f5e704af4e3d39',
+            created_at=now,
+            skills=skills
+        )
+
