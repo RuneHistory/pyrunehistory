@@ -68,6 +68,71 @@ accounts = rh.accounts.update_account('old-nickname', 'New Nickname')
 | `slug` | `str` | *N/A* | The slug of the account to update. |
 | `nickname` | `str` | *N/A* | The new nickname of the account. |
 
+## Highscores
+All highscores are associated with an account, and you must define the account slug when accessing highscores.
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.highscores('nickname')
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slug` | `str` | *N/A* | The slug of the account to perform highscore operations on. |
+
+### Get highscores
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.highscores('nickname').get_highscores()
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `created_after` | `datetime` | `None` | Only show highscores created on or after this date. |
+| `created_before` | `datetime` | `None` | Only show highscores created before this date. |
+| `skills` | `list[str]` | `None` | Only retrieve the skills provided in this list. |
+
+### Get highscore
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.highscores('nickname').get_highscore('5a9d8e6b95f5e704af4e3d39')
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `id` | `str` | *N/A* | The ID of the highscore to fetch |
+
+### Create highscore
+The following example will create all skills with the same values to save on space in the example.
+```
+from pyrunehistory.client import Client
+from pyrunehistory.domain.models.highscore import SKILLS, Skill
+rh = Client()
+skills = {}
+for skill in SKILLS:
+    skills[skill] = Skill(1, 99, 999999999)
+accounts = rh.accounts.highscores('nickname').create_highscore(skills)
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `skills` | `dict[str, Skill]` | *N/A* | A dictionary of `Skill` objects that contain the data to build a highscore. |
+
+There is a helper function to create the `Skill` objects for you that takes dictionaries instead.
+
+```
+from pyrunehistory.client import Client
+from pyrunehistory.domain.models.highscore import SKILLS, to_skills
+rh = Client()
+skills = {}
+for skill in SKILLS:
+    skills[skill] = {'rank': 1, 'level': 99, 'experience': 999999999}
+skill_objects = to_skills(skills)
+accounts = rh.accounts.highscores('nickname').create_highscore(skill_objects)
+```
+
 # Running tests
 ## Install the package with test dependencies
 `pip install -e ".[test]"`
