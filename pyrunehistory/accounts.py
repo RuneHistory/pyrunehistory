@@ -11,7 +11,7 @@ class Accounts:
 
     def get_accounts(self, runs_unchanged_min: int = None,
                      runs_unchanged_max: int = None,
-                     before_time: datetime = None,
+                     last_ran_before: datetime = None,
                      prioritise: bool = True
                      ) -> typing.List[Account]:
         response = self.client(
@@ -21,7 +21,7 @@ class Accounts:
                 'prioritise': prioritise,
                 'runs_unchanged_min': runs_unchanged_min,
                 'runs_unchanged_max': runs_unchanged_max,
-                'last_ran_before': before_time.isoformat(),
+                'last_ran_before': last_ran_before.isoformat(),
             }
         )
         accounts = []
