@@ -1,5 +1,6 @@
 # pyrunehistory
 
+[![PyPI version](https://badge.fury.io/py/pyrunehistory.svg)](https://badge.fury.io/py/pyrunehistory)
 [![Build Status](https://travis-ci.org/jmwri/pyrunehistory.svg?branch=master)](https://travis-ci.org/jmwri/pyrunehistory)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/9aa891c23deb437b1616/test_coverage)](https://codeclimate.com/github/jmwri/pyrunehistory/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/9aa891c23deb437b1616/maintainability)](https://codeclimate.com/github/jmwri/pyrunehistory/maintainability)
