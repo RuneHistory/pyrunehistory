@@ -19,7 +19,7 @@ Description: API host that the client will use. You will not need this unless yo
 Name: version
 Type: `int`
 Default: `1`
-Description: The API version that the client will use. You will not need this unless you are working locally.
+Description: "The API version that the client will use. You will not need this unless you are working locally."
 ---
 
 ### Accounts
@@ -34,22 +34,22 @@ accounts = rh.accounts.get_accounts()
 Name: runs_unchanged_min
 Type: `int`
 Default: `None`
-Description: The minimum amount of times an account has been updated without experience changing.
+Description: "The minimum amount of times an account has been updated without experience changing."
 
 Name: runs_unchanged_max
 Type: `int`
 Default: `None`
-Description: The maximum amount of times an account has been updated without experience changing.
+Description: "The maximum amount of times an account has been updated without experience changing."
 
 Name: last_ran_before
 Type: `datetime`
 Default: `None`
-Description: Only show accounts that were last checked before this time.
+Description: "Only show accounts that were last checked before this time."
 
 Name: prioritise
 Type: `bool`
 Default: `True`
-Description: Prioritise the order of return accounts to return accounts to be reported on first.
+Description: "Prioritise the order of return accounts to return accounts to be reported on first."
 ---
 
 ## Running tests
