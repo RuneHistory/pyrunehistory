@@ -14,7 +14,6 @@ rh = Client()
 | --- | --- | --- | --- |
 | `host` | `str` | `http://api.runehistory.com` | API host that the client will use. You will not need this unless you are working locally. |
 | `version` | `int` | `1` | The API version that the client will use. You will not need this unless you are working locally. |
----
 
 ### Accounts
 #### Get accounts
