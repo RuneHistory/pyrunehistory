@@ -29,6 +29,40 @@ accounts = rh.accounts.get_accounts()
 | `last_ran_before` | `datetime` | `None` | Only show accounts that were last checked before this time. |
 | `prioritise` | `bool` | `True` | Prioritise the order of return accounts to return accounts to be reported on first. |
 
+#### Get account
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.get_account('nickname')
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slug` | `str` | *N/A* | The slug of the account to fetch. |
+
+#### Create account
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.create_account('Nickname')
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `nickname` | `str` | *N/A* | The nickname of the account to create. |
+
+#### Update account
+```
+from pyrunehistory.client import Client
+rh = Client()
+accounts = rh.accounts.update_account('old-nickname', 'New Nickname')
+```
+
+| Name | Type | Default | Description |
+| --- | --- | --- | --- |
+| `slug` | `str` | *N/A* | The slug of the account to update. |
+| `nickname` | `str` | *N/A* | The new nickname of the account. |
+
 ## Running tests
 ### Install the package with test dependencies
 `pip install -e ".[test]"`
