@@ -18,14 +18,17 @@ class HighScores:
                        created_before: datetime = None,
                        skills: typing.List[str] = None
                        ) -> typing.List[HighScore]:
+        params = {}
+        if created_after is not None:
+            params['created_after'] = created_after.isoformat()
+        if created_before is not None:
+            params['created_before'] = created_before.isoformat()
+        if skills is not None:
+            params['skills'] = ','.join(skills)
         response = self.client(
             'GET',
             'accounts/{}/highscores'.format(self.slug),
-            params={
-                'created_after': created_after.isoformat(),
-                'created_before': created_before.isoformat(),
-                'skills': ','.join(skills) if skills else None,
-            }
+            params=params
         )
         highscores = []
         for record in response:
