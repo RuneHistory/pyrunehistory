@@ -14,15 +14,19 @@ class Accounts:
                      last_ran_before: datetime = None,
                      prioritise: bool = True
                      ) -> typing.List[Account]:
+        params = {}
+        if runs_unchanged_min is not None:
+            params['runs_unchanged_min'] = runs_unchanged_min
+        if runs_unchanged_max is not None:
+            params['runs_unchanged_max'] = runs_unchanged_max
+        if last_ran_before is not None:
+            params['last_ran_before'] = last_ran_before.isoformat()
+        if prioritise is not None:
+            params['prioritise'] = prioritise
         response = self.client(
             'GET',
             'accounts',
-            params={
-                'prioritise': prioritise,
-                'runs_unchanged_min': runs_unchanged_min,
-                'runs_unchanged_max': runs_unchanged_max,
-                'last_ran_before': last_ran_before.isoformat(),
-            }
+            params=params
         )
         accounts = []
         for record in response:
