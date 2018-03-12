@@ -24,6 +24,15 @@ def test_skill_types():
     assert skill.experience == 123456
 
 
+def test_skill_encodable():
+    skill = Skill(50, 30, 123456)
+    assert skill.get_encodable() == {
+        'rank': 50,
+        'level': 30,
+        'experience': 123456,
+    }
+
+
 def test_highscore_creation():
     now = datetime.utcnow()
     skills = {}
@@ -71,3 +80,30 @@ def test_highscore_creation_invalid_skill_type():
             skills=skills
         )
 
+
+def test_highscore_encodable():
+    now = datetime.utcnow()
+    skills = {}
+    for i, skill in enumerate(SKILLS):
+        n = i + 1
+        skills[skill] = Skill(n*10, n*5, n*100)
+    highscore = HighScore(
+        account_id='5a86be56b0d12d0309c185b9',
+        id='5a9d8e6b95f5e704af4e3d39',
+        created_at=now,
+        skills=skills
+    )
+    skills_dict = {}
+    for i, skill in enumerate(SKILLS):
+        n = i + 1
+        skills_dict[skill] = {
+            'rank': n*10,
+            'level': n*5,
+            'experience': n*100,
+        }
+    assert highscore.get_encodable() == {
+        'account_id': '5a86be56b0d12d0309c185b9',
+        'id': '5a9d8e6b95f5e704af4e3d39',
+        'created_at': now.isoformat(),
+        'skills': skills_dict,
+    }

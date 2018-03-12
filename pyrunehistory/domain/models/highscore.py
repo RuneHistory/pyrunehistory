@@ -15,6 +15,13 @@ class Skill:
         self.level = int(level)
         self.experience = int(experience)
 
+    def get_encodable(self):
+        return {
+            'rank': self.rank,
+            'level': self.level,
+            'experience': self.experience,
+        }
+
 
 class HighScore:
     def __init__(self, account_id: str, id: str,
@@ -38,6 +45,15 @@ class HighScore:
         validate_skills(skills)
         self._skills = skills
 
+    def get_encodable(self):
+        return {
+            'account_id': self.account_id,
+            'id': self.id,
+            'created_at': self.created_at.isoformat()
+            if self.created_at else None,
+            'skills': from_skills(self.skills),
+        }
+
 
 def validate_skills(skills: typing.Dict[str, Skill]):
     for name, skill in skills.items():
@@ -56,3 +72,8 @@ def to_skills(skills: typing.Dict[str, dict]):
         name: Skill(**skill)
         for name, skill in skills.items()
     }
+
+
+def from_skills(skills: typing.Dict[str, Skill]):
+    return {name: skill.get_encodable() for name, skill in
+            skills.items() if skill is not None}

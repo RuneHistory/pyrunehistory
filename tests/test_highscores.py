@@ -40,11 +40,12 @@ def test_get_highscores(highscores: HighScores, highscores_data):
     now = datetime.utcnow()
     with patch('pyrunehistory.client.Client.__call__') as call_mock:
         call_mock.return_value = highscores_data
-        res = highscores.get_highscores(now, now)
+        res = highscores.get_highscores(now, now, ['overall', 'attack'])
         call_mock.assert_called_with('GET', 'accounts/wrighto/highscores',
                                         params={
                                             'created_after': now.isoformat(),
                                             'created_before': now.isoformat(),
+                                            'skills': 'overall,attack',
                                         })
         assert res[0].account_id == '5a86be56b0d12d0309c185b9'
         assert res[0].created_at.isoformat() == '2018-03-05T18:37:31.467000'
@@ -69,12 +70,12 @@ def test_get_highscore(highscores: HighScores, highscores_data):
 
 def test_create_highscore(highscores: HighScores, highscores_data, highscores_objects):
     with patch('pyrunehistory.client.Client.__call__') as call_mock:
-        call_mock.return_value = highscores_data[0]
+        call_mock.return_value = deepcopy(highscores_data[0])
         res = highscores.create_highscore(highscores_objects[0]['skills'])
         call_mock.assert_called_with('POST',
                                      'accounts/wrighto/highscores',
                                      data={
-                                         'skills': highscores_objects[0]['skills']
+                                         'skills': highscores_data[0]['skills']
                                      })
         assert res.account_id == '5a86be56b0d12d0309c185b9'
         assert res.created_at.isoformat() == '2018-03-05T18:37:31.467000'

@@ -2,7 +2,7 @@ import typing
 from datetime import datetime
 
 from pyrunehistory.domain.models.highscore import HighScore, Skill, SKILLS,\
-    validate_skills, to_skills
+    validate_skills, to_skills, from_skills
 
 
 class HighScores:
@@ -55,7 +55,7 @@ class HighScores:
             'POST',
             'accounts/{}/highscores'.format(self.slug),
             data={
-                'skills': skills
+                'skills': from_skills(skills)
             }
         )
         response['skills'] = to_skills(response['skills'])
