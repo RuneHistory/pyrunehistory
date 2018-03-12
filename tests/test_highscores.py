@@ -45,7 +45,6 @@ def test_get_highscores(highscores: HighScores, highscores_data):
                                         params={
                                             'created_after': now.isoformat(),
                                             'created_before': now.isoformat(),
-                                            'skills': None,
                                         })
         assert res[0].account_id == '5a86be56b0d12d0309c185b9'
         assert res[0].created_at.isoformat() == '2018-03-05T18:37:31.467000'
