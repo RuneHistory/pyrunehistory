@@ -5,4 +5,4 @@ from pyrunehistory.client import Client
 
 @fixture
 def client() -> Client:
-    return Client('http://tests')
+    return Client('user', 'password', 'secret', 'http://tests')
