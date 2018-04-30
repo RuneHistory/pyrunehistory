@@ -11,7 +11,7 @@ RuneHistory API client.
 ## Client
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 ```
 
 | Name | Type | Default | Description |
@@ -23,7 +23,7 @@ rh = Client()
 ### Get accounts
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.get_accounts()
 ```
 
@@ -37,7 +37,7 @@ accounts = rh.accounts.get_accounts()
 ### Get account
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.get_account('nickname')
 ```
 
@@ -48,7 +48,7 @@ accounts = rh.accounts.get_account('nickname')
 ### Create account
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.create_account('Nickname')
 ```
 
@@ -59,7 +59,7 @@ accounts = rh.accounts.create_account('Nickname')
 ### Update account
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.update_account('old-nickname', 'New Nickname')
 ```
 
@@ -72,7 +72,7 @@ accounts = rh.accounts.update_account('old-nickname', 'New Nickname')
 All highscores are associated with an account, and you must define the account slug when accessing highscores.
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.highscores('nickname')
 ```
 
@@ -83,7 +83,7 @@ accounts = rh.accounts.highscores('nickname')
 ### Get highscores
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.highscores('nickname').get_highscores()
 ```
 
@@ -96,7 +96,7 @@ accounts = rh.accounts.highscores('nickname').get_highscores()
 ### Get highscore
 ```
 from pyrunehistory.client import Client
-rh = Client()
+rh = Client('username', 'password', 'secret')
 accounts = rh.accounts.highscores('nickname').get_highscore('5a9d8e6b95f5e704af4e3d39')
 ```
 
@@ -109,7 +109,7 @@ The following example will create all skills with the same values to save on spa
 ```
 from pyrunehistory.client import Client
 from pyrunehistory.domain.models.highscore import SKILLS, Skill
-rh = Client()
+rh = Client('username', 'password', 'secret')
 skills = {}
 for skill in SKILLS:
     skills[skill] = Skill(1, 99, 999999999)
@@ -125,7 +125,7 @@ There is a helper function to create the `Skill` objects for you that takes dict
 ```
 from pyrunehistory.client import Client
 from pyrunehistory.domain.models.highscore import SKILLS, to_skills
-rh = Client()
+rh = Client('username', 'password', 'secret')
 skills = {}
 for skill in SKILLS:
     skills[skill] = {'rank': 1, 'level': 99, 'experience': 999999999}

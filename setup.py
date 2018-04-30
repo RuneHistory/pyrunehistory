@@ -32,6 +32,7 @@ setup(
     install_requires=[
         'typing',
         'requests>=2.18,<3',
+        'simplejwt>=1.0.1,<2',
     ],
     tests_require=[
         'python-dateutil>=2.6.1,<3', 'pytest',
