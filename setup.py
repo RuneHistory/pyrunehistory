@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 github = 'https://github.com/jmwri/pyrunehistory'
-version = '0.0.3'
+version = '1.0.0'
 
 setup(
     name='pyrunehistory',
