@@ -43,7 +43,8 @@ setup(
     ],
     extras_require={
         'test': [
-            'coverage', 'tox', 'pytest'
+            'coverage', 'tox', 'pytest', 'pytest-runner',
+            'python-dateutil>=2.6.1,<3'
         ]
     }
 )

@@ -2,8 +2,10 @@ import json
 
 from unittest.mock import patch
 
+from pyrunehistory.auth import JwtAuth
 from pyrunehistory.client import Client
 from pyrunehistory.accounts import Accounts
+from tests import IsInstance
 
 
 def test_hostname(client: Client):
@@ -26,5 +28,7 @@ def test_call_request_parameters(client: Client):
     merged_url = '{}/{}'.format(client.hostname, url)
     with patch('requests.request') as request_mock:
         client(method, url, {'test_param': 123}, {'test_data': 456})
-        request_mock.assert_called_with(method, merged_url, params=params,
-                                        data=json.dumps(data), headers=headers)
+        request_mock.assert_called_with(method, merged_url,
+                                        auth=IsInstance(JwtAuth),
+                                        params=params, data=json.dumps(data),
+                                        headers=headers)
