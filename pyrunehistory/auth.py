@@ -9,6 +9,8 @@ class JwtAuth(AuthBase):
         self.token = token
 
     def __call__(self, r: PreparedRequest):
+        if not isinstance(r.headers, dict):
+            r.headers = {}
         r.headers.update({'Authorization': 'Bearer {}'.format(self.token)})
         return r
 
