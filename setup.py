@@ -1,7 +1,11 @@
 from setuptools import setup, find_packages
+import re
+
+with open('pyrunehistory/__init__.py') as version_file:
+    version = re.search(r"""__version__\s+=\s+(['"])(?P<version>.+?)\1""",
+                        version_file.read()).group('version')
 
 github = 'https://github.com/jmwri/pyrunehistory'
-version = '1.0.0'
 
 setup(
     name='pyrunehistory',
