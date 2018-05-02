@@ -43,7 +43,7 @@ setup(
     ],
     extras_require={
         'test': [
-            'coverage', 'tox'
+            'coverage', 'tox', 'pytest'
         ]
     }
 )
