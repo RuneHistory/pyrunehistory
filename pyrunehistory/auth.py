@@ -1,3 +1,5 @@
+from typing import Mapping
+
 from requests.auth import HTTPBasicAuth, AuthBase
 from requests.models import PreparedRequest
 
@@ -9,7 +11,7 @@ class JwtAuth(AuthBase):
         self.token = token
 
     def __call__(self, r: PreparedRequest):
-        if not isinstance(r.headers, dict):
+        if not isinstance(r.headers, Mapping):
             r.headers = {}
         r.headers.update({'Authorization': 'Bearer {}'.format(self.token)})
         return r
