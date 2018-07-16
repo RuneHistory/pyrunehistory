@@ -24,13 +24,13 @@ class Skill:
 
 
 class HighScore:
-    def __init__(self, account_id: str, id: str,
-                 created_at: datetime, skills: typing.Dict[str, Skill]):
+    def __init__(self, account_id: str, created_at: datetime,
+                 skills: typing.Dict[str, Skill], id: str = None):
         self.account_id = account_id
-        self.id = id
         self.created_at = created_at
         self._skills = dict()
         self.skills = skills
+        self.id = id
 
     @property
     def skills(self) -> typing.Dict[str, typing.Union[None, Skill]]:
